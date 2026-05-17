@@ -1,12 +1,14 @@
 import "./Profile.css"
 
-function Profile() {
+function Profile(props) {
     return (
-        <>
-            <img src ="" alt ="Profile Picture" />
-            <h2>Oliver</h2>
-            <p>Hello. I am 25 years old.</p>
-        </>
+        <div className ="profile">
+        <img src ="{props.profilePic}" alt ="Profile Picture" className="img" />
+            <h2 className ="profileTitle">{props.title}</h2>
+            <p className ="githubRepo">{props.repo}</p>
+            <p className ="usedTech">{props.tech}</p>
+            <p className ="Learned">{props.learned}</p>
+        </div>
   )
 }
 
