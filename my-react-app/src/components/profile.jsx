@@ -14,3 +14,5 @@ function Profile(props) {
 }
 
 export default Profile;
+
+// This is a work in progress, it does not look very good yet as I focus more on catching up on the assignments. :)
