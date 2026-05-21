@@ -15,8 +15,6 @@ function App() {
           <Route path ="/" element ={<Home />} />
           <Route path ="/about" element ={<About />} />
           <Route path ="/portfolio" element ={<Portfolio />} />
-          <Route path ="/events" element ={<Events />} />
-          <Route path ="/usestate" element ={<UseState />} />
         </Routes>
       </BrowserRouter>
     </>
