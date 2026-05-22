@@ -5,6 +5,7 @@ import Portfolio from "./pages/portfolio.jsx";
 import Navbar from "./navbar.jsx";
 import Events from "./pages/events.jsx";
 import UseState from "./pages/usestate.jsx";
+import OnChange from "./pages/onchange.jsx";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Route path ="/" element ={<Home />} />
           <Route path ="/about" element ={<About />} />
           <Route path ="/portfolio" element ={<Portfolio />} />
+          <Route path ="/onchange" element ={<OnChange />} />
         </Routes>
       </BrowserRouter>
     </>
