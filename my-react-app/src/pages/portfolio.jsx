@@ -42,7 +42,7 @@ const Portfolio = () => {
             info: "",
         },
         {
-            title: "",
+            title: "Project: Form",
             tags: "",
             info: "",
         },
@@ -84,6 +84,32 @@ const Portfolio = () => {
             setPreviewButton("Show Projects");
         }
     };
+
+    return (
+        <div>
+            <h1 className ="portfolio-title">My Portfolio</h1>
+            <p className ="portfolio-desc">Here are some of my projects:</p>
+
+            <div className= "toggle-preview">
+                <button onClick ={togglePreview} className ="toggle-preview-button">{previewButton}</button>
+            </div>
+
+            {preview && (
+                <div className ="search-bar">
+                    <input type ="text" plceholder ="Search projects..." value ={search} className ="search-input" onChange ={(e) => setSearch(e.target.value)} />
+                </div>
+            )}
+
+            {preview && (
+                <div className ="project-list">
+                    {projects.map((project, index) => (
+                        <Card key ={index} title ={project.title} tags ={project.tags} onClick ={() => showPopup(index)} />
+                    ))}
+                </div>
+            )}
+
+        </div>
+    )
 };  
 
 export default Portfolio;
