@@ -1,19 +1,10 @@
 import {useState} from "react";
-import ProjectList from "../components/Project-list";
+import React from "react";
+import ProjectCard from "../components/ProjectCard";
+import ProjectPopup from "../components/ProjectPopup";
 
-function Portfolio() {
-    const [showProjects, setShowProjects] = useState(false);
+const Portfolio = () => {
+    const [preview, setPreview] = useState(false);
     
-    
-    return (
-        <div>
-            <h2>Portfolio</h2>
-
-            <button onClick ={() => setShowProjects(true)}>View my projects.</button>
-
-            {showProjects && <ProjectList />}
-        </div>
-    )
-}
 
 export default Portfolio;
