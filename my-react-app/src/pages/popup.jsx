@@ -2,7 +2,6 @@ import {useState} from "react";
 import PopupWindow from "../components/popupwindow";
 
 function Popup() {
-    const [count, setCount] = useState(0);
 
     const myProjects = [
         {
@@ -43,19 +42,14 @@ function Popup() {
 
     return (
         <div>
-            <button onClick ={() => setIsOpen(true)}>Open popup</button>
-            <h1>Counter: {count}</h1>
-            <button onClick ={() => setCount(count + 1)}>Increase</button>
-            <button onClick ={() => setCount(count - 1)}>Decrease</button>
-
             <h2>My projects</h2>
-            <div>
+            
                 {myProjects.map((project, index) => (
                     <button key ={index} onClick ={() => openProject(project)}>
                         {project.title}
                     </button>
                 ))}
-            </div>
+            
 
             {isOpen && (
                 <PopupWindow title ={popupInfo.title} info ={popupInfo.info} screenshot ={popupInfo.screenshot} repo ={popupInfo.repo} tech ={popupInfo.tech} onClick ={closePopup}/>
