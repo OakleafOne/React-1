@@ -13,52 +13,52 @@ const Portfolio = () => {
     const projects = [
         {
             title: "Project: My first website",
-            tags: "",
+            tags: [],
             info: "",
         },
         {
             title: "Project: SVG",
-            tags: "",
+            tags: [],
             info: "",
         },
         {
             title: "Project: Form",
-            tags: "",
+            tags: [],
             info: "",
         },
         {
             title: "Project: Grid",
-            tags: "",
+            tags: [],
             info: "",
         },
         {
             title: "Project: Flexbox",
-            tags: "",
+            tags: [],
             info: "",
         },
         {
             title: "Project: JavaScript variables and operators",
-            tags: "",
+            tags: [],
             info: "",
         },
         {
             title: "Project: Form",
-            tags: "",
+            tags: [],
             info: "",
         },
         {
             title: "",
-            tags: "",
+            tags: [],
             info: "",
         },
         {
             title: "",
-            tags: "",
+            tags: [],
             info: "",
         },
         {
             title: "",
-            tags: "",
+            tags: [],
             info: "",
         },
     ];
@@ -96,7 +96,7 @@ const Portfolio = () => {
 
             {preview && (
                 <div className ="search-bar">
-                    <input type ="text" plceholder ="Search projects..." value ={search} className ="search-input" onChange ={(e) => setSearch(e.target.value)} />
+                    <input type ="text" placeholder ="Search projects..." value ={search} className ="search-input" onChange ={(e) => setSearch(e.target.value)} />
                 </div>
             )}
 
@@ -106,7 +106,7 @@ const Portfolio = () => {
                     (project.tags.some((tag) => tag.toLowerCase().includes(search.toLowerCase()))))
                     
                     .map((project, index) => (
-                        <Card key ={index} title ={project.title} tags ={project.tags} onClick ={() => showPopup(index)} />
+                        <ProjectCard key ={index} title ={project.title} tags ={project.tags} onClick ={() => showPopup(index)} />
                     ))}
                 </div>
             )}
