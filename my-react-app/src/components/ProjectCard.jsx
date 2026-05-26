@@ -1,5 +1,5 @@
 import React from "react";
-import "./ProjectCard.css";
+import "./Portfolio.css";
 
 const ProjectCard =({ title, tags, onClick }) => {
     return (

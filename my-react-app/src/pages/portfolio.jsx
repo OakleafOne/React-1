@@ -13,12 +13,12 @@ const Portfolio = () => {
     const projects = [
         {
             title: "Project: My first website",
-            tags: [],
-            info: "",
+            tags: ["#HTML", "#CSS"],
+            info: "This is the very first website I ever made",
         },
         {
             title: "Project: SVG",
-            tags: [],
+            tags: ["#HTML", "#CSS"],
             info: "",
         },
         {

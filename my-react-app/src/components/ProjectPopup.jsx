@@ -1,5 +1,5 @@
 import React from "react";
-import "./ProjectPopup.css";
+import "./Portfolio.css";
 
 const ProjectPopup =({ title, tags, info, onClick }) => {
     return (
