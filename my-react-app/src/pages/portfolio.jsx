@@ -102,10 +102,17 @@ const Portfolio = () => {
 
             {preview && (
                 <div className ="project-list">
-                    {projects.map((project, index) => (
+                    {projects.filter((project) => 
+                    (project.tags.some((tag) => tag.toLowerCase().includes(search.toLowerCase()))))
+                    
+                    .map((project, index) => (
                         <Card key ={index} title ={project.title} tags ={project.tags} onClick ={() => showPopup(index)} />
                     ))}
                 </div>
+            )}
+
+            {popup && (
+                <ProjectPopup title ={popupData.title} tags ={popupData.tags} info ={popupData.info} onClick ={closePopup} />
             )}
 
         </div>
