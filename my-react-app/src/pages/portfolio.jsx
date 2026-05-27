@@ -19,56 +19,50 @@ const Portfolio = () => {
         {
             title: "Project: SVG",
             tags: ["#HTML", "#CSS", "#SVG"],
-            info: "",
+            info: "This is a project where I learned how to create SVGs",
         },
         {
             title: "Project: Form",
-            tags: [],
-            info: "",
+            tags: ["#HTML", "#CSS"],
+            info: "A project where I learned how to make a form that requires valid inputs to submit",
         },
         {
             title: "Project: Grid",
-            tags: [],
-            info: "",
+            tags: ["#HTML", "#CSS", "#GRID"],
+            info: "A project where I learned how to use grid in CSS",
         },
         {
             title: "Project: Flexbox",
-            tags: [],
-            info: "",
+            tags: ["#HTML", "#CSS", "#FLEX"],
+            info: "A project where I learned how to use flexbox in CSS",
         },
         {
-            title: "Project: JavaScript variables and operators",
-            tags: [],
-            info: "",
+            title: "Project: JavaScript Variables and Operators",
+            tags: ["#HTML", "#JS"],
+            info: "My very  first project using JavaScript to learn the basics",
         },
         {
-            title: "Project: Form",
-            tags: [],
-            info: "",
+            title: "Project: JavaScript String Method and Parse",
+            tags: ["#HTML", "#JS"],
+            info: "A JavaScript project where I learned to use string methods and parses",
         },
         {
-            title: "",
-            tags: [],
-            info: "",
+            title: "Project: React Portfolio",
+            tags: ["#REACT", "#HTML", "#CSS", "#JS"],
+            info: "This is the project for this portfolio",
         },
-        {
-            title: "",
-            tags: [],
-            info: "",
-        },
-        {
-            title: "",
-            tags: [],
-            info: "",
-        },
+        // Left empty for addition of future projects. { title: "", tags: [], info: "", },
+        // Left empty for addition of future projects. { title: "", tags: [], info: "", }, 
+            
+        
     ];
 
     const showPopup = (project) => {
         setPopup(true);
         setPopupData({
-            title: projects.title,
-            tags: projects.tags,
-            info: projects.info,
+            title: project.title,
+            tags: project.tags,
+            info: project.info,
         });
     };
 
