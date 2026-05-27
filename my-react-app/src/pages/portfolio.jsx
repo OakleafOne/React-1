@@ -18,7 +18,7 @@ const Portfolio = () => {
         },
         {
             title: "Project: SVG",
-            tags: ["#HTML", "#CSS"],
+            tags: ["#HTML", "#CSS", "#SVG"],
             info: "",
         },
         {
@@ -63,12 +63,12 @@ const Portfolio = () => {
         },
     ];
 
-    const showPopup = (index) => {
+    const showPopup = (project) => {
         setPopup(true);
         setPopupData({
-            title: projects[index].title,
-            tags: projects[index].tags,
-            info: projects[index].info,
+            title: projects.title,
+            tags: projects.tags,
+            info: projects.info,
         });
     };
 
@@ -102,13 +102,20 @@ const Portfolio = () => {
 
             {preview && (
                 <div className ="project-list">
-                    {projects.filter((project) => 
-                    (project.tags.some((tag) => tag.toLowerCase().includes(search.toLowerCase()))))
-                    
-                    .map((project, index) => (
-                        <ProjectCard key ={index} title ={project.title} tags ={project.tags} onClick ={() => showPopup(index)} />
+                    {projects.filter((project) => {
+                        if (search.trim() === "") {
+                            return true;
+                        }
+                        const query = search.toLowerCase();
+                        const matchesTitle = project.title ? project.title.toLowerCase().includes(query) : false;
+                        const matchesTags = Array.isArray(project.tags) ? project.tags.some((tag) => tag.toLowerCase().includes(query)) : false;
+                        return matchesTitle || matchesTags;
+                    }).map((project, index) => (
+                        <ProjectCard key ={index} title ={project.title} tags ={project.tags} onClick ={() => showPopup(project)} />
                     ))}
                 </div>
+                    
+                    
             )}
 
             {popup && (
